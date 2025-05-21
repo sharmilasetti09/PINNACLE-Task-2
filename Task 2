@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keylogger Simulation (Ethical)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 Keylogger Simulator (Ethical Use Only)</h2>
+    <textarea id="inputArea" placeholder="Type here..." rows="6" cols="50"></textarea>
+    <h3>Keystrokes Logged:</h3>
+    <div id="log"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.container {
+  background: #fff;
+  padding: 30px;
+  margin: auto;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+textarea {
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  resize: none;
+}
+
+#log {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #eaeaea;
+  border: 1px solid #ccc;
+  height: 120px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+const inputArea = document.getElementById("inputArea");
+const log = document.getElementById("log");
+
+document.addEventListener("keydown", function (event) {
+  const key = event.key === " " ? "[Space]" : event.key;
+  log.textContent += key + " ";
+});
